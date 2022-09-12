@@ -7,7 +7,7 @@
  *
  * Return: Always 0 (Success)
  */
-int main(void) 
+int main(void)
 {
 	int n;
 	int lastDigit;
@@ -22,5 +22,5 @@ int main(void)
 		printf("0\n");
 	else
 		printf("less than 6 and not 0\n");
-	return (0); 
+	return (0);
 }

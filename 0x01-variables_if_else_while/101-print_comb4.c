@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Result: Always 0 (Success)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
@@ -15,7 +15,7 @@ int main(void)
 		num2 = num1 + 1;
 		while (num2 <= '8')
 		{
-			num3 = num2 + 3;
+			num3 = num2 + 1;
 			while (num3 <= '9')
 			{
 				putchar(num1);

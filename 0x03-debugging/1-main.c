@@ -2,7 +2,7 @@
 
 /**
  * main - causes an infinite loop
- * Retun: 0
+ * Return: 0
  */
 
 int main(void)

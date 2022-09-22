@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
+int is_prime(long num);
 /**
  * main - largest of  prime factor of the number 612852475143
  * Return: 0 (Success)

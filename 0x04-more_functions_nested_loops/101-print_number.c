@@ -35,7 +35,7 @@ void print_number(int num)
 	for (i = degree; i >= 0; --i)
 	{
 		temp = quot / _pow(10, i);
-		if (i == 0 && is_int_main)
+		if (i == 0 && is_int_min)
 			temp += 1;
 		_putchar('0' + temp);
 		quot %= _pow(10, i);

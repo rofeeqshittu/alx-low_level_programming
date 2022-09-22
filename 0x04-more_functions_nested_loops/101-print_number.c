@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <limits.h>
-#include <main.h>
+#include "main.h"
 
 int _pow(int x, int y);
 

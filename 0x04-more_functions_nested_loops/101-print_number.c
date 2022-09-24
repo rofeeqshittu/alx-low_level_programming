@@ -2,7 +2,7 @@
 #include <limits.h>
 #include "main.h"
 
-int _pow(int x, int y);
+int _pow(int x, int y)
 
 /**
  * print_number - prints an integer

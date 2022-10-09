@@ -6,7 +6,7 @@
  * @str: the string to be processed
  * Return: the lenght of the string
  */
-int _strlen(char *s)
+int _strlen(char *str)
 {
 	int i;
 

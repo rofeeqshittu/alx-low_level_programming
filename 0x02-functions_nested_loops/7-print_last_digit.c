@@ -2,7 +2,7 @@
 
 /**
  * print_last_digit - function that prints the last digit of a number.
- * @y: number to be checked
+ * @y: number decleared
  * @z: number to be checked
  *
  * Return: (y)
@@ -10,8 +10,8 @@
 
 int print_last_digit(int z)
 {
-	int y;
-
-	y = z % 10;
-	return (y);
+	if (z <= 0)
+		z *= -1;
+	_putchar((z % 10) + '0');
+	return (z % 10);
 }

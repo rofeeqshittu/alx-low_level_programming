@@ -2,8 +2,11 @@
 #include "main.h"
 
 /**
- * print_array: a function that prints n elements of an array of integers,
+ * print_array - a function that prints n elements of an array of integers,
  * followed by a new line.
+ *
+ * @a: string to be printed
+ * @n: number of array to be printed
  */
 void print_array(int *a, int n)
 {
@@ -11,11 +14,11 @@ void print_array(int *a, int n)
 
 	i = 0;
 
-	for (; i < n; i++)
-	{
-		for (; i < (n - 1); i++)
-			printf("%i, ", a[i]);
-		printf("%i", a[i]);
-		printf("\n");
-	}
+		for (; i < n; i++)
+		{
+			printf("%d", a[i]);
+			if (!(i == n - 1))
+				printf(", ");
+		}
+	printf("\n");
 }

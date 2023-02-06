@@ -23,7 +23,7 @@ void rev_string(char *s)
 	char New[1000];
 
 	lenght = _strlen(s) - 1;
-	for (i = 0; i < lenght; i++)
+	for (i = 0; i < lenght; i++, nu)
 		New[i] = s[num];
 	New[i] = '\0';
 

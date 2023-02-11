@@ -2,21 +2,23 @@
 #include <stdio.h>
 
 /**
- * strlen - function that return the lenght of a string
- *
- * Return: (0)
+ * _strlen - function that return the lenght of a string
+ * @s: string to count
+ * Return: number counted
  */
 
 int _strlen(char *s)
 {
-        int y;
+	int y;
 
-        for (y = 0; s[y]; y++);
-        return (y);
+	for (y = 0; s[y]; y++)
+		;
+	return (y);
 }
 
 /**
  * rev_string - function that prints a string, in reverse
+ * @s: string to count
  */
 void rev_string(char *s)
 {

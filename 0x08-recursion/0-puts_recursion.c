@@ -3,6 +3,8 @@
 /**
  * _puts_recursion - a function that prints a string
  * followed by a new line
+ *
+ * @s: string to read
  */
 void _puts_recursion(char *s)
 {

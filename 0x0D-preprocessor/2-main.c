@@ -5,7 +5,10 @@
  *
  * Return: printed file name
  */
-int *main(void)
+int main(void)
 {
-	return (__FILE__);
+	const char *filename = __FILE__;
+
+
+	return (filename);
 }

@@ -1,12 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
 
-struct dog *d
-{
-	char *name;
-	float age;
-}
-
 /**
  * init_dog - a function that initialize a type struct dog
  * @struct dog *d: function of the structure of dog
@@ -16,10 +10,10 @@ struct dog *d
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	if (d != NULL)
-	{
-		d->name = name;
-		d->age = age;
-		d->owner = owner;
-	}
+	if (d == NULL)
+		return;
+
+	d->name = name;
+	d->age = age;
+	d->owner = owner;
 }

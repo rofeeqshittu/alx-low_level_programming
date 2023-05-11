@@ -30,6 +30,6 @@ int main(int argc, char *argv[])
 	}
 
 	result = (get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
-	printf("%d", result);
+	printf("%d\n", result);
 	return (0);
 }

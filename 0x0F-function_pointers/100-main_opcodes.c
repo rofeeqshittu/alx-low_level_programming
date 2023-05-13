@@ -7,7 +7,7 @@
  * @argv: an array of pointer to the arguments
  *
  * Return: 0 on success, 1 if incorrect number of arguments,
- *	2 if negative number of bytes is passed. 
+ *	2 if negative number of bytes is passed.
  */
 int main(int argc, char *argv[])
 {
@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 	}
 
 	char *opcode = (char *)main;
+
 	for (i = 0; i < num_bytes; i++)
 	{
 		printf("%.02hhx ", opcode[i]);

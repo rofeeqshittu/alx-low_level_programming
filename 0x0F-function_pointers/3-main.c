@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit(98);
+		return (98);
 	}
 
 	if (op_func == NULL || argv[2][1] != '\0')

@@ -8,3 +8,10 @@
  *
  * Result: void
  */
+void print_all(const char * const format, ...)
+{
+	va_list all;
+	int i;
+
+
+}

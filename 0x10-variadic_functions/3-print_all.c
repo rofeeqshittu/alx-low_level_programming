@@ -11,13 +11,11 @@ void print_all(const char * const format, ...)
 	int j, k, l;
 	char arg;
 	char *iarg;
-	/* char array[] = {c, i, f, s}; */
 	va_list ap;
 
 	va_start(ap, format);
-	j = 0;
+	j = l = 0;
 	k = 0;
-	l = 0;
 	while (format[j] != '\0')
 	{
 		l++;
@@ -50,5 +48,4 @@ void print_all(const char * const format, ...)
 		j++;
 	}
 	printf("\n");
-
 }

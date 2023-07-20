@@ -9,8 +9,7 @@
 void print_all(const char * const format, ...)
 {
 	int j, k, l;
-	char arg;
-	char *iarg;
+	char arg, *iarg;
 	va_list ap;
 
 	va_start(ap, format);
@@ -34,7 +33,8 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				iarg = va_arg(ap, char *);
-				k = 0;
+				if (iarg == NULL)
+					printf("(nil)");
 				while (iarg[k] != '\0')
 				{
 					printf("%c", iarg[k]);

@@ -8,7 +8,7 @@
  */
 void print_all(const char * const format, ...)
 {
-	int j;
+	int j, k, l;
 	char arg;
 	char *iarg;
 	/* char array[] = {c, i, f, s}; */
@@ -16,33 +16,37 @@ void print_all(const char * const format, ...)
 
 	va_start(ap, format);
 	j = 0;
+	k = 0;
+	l = 0;
 	while (format[j] != '\0')
 	{
-		if (format[j] == 'c')
+		l++;
+		switch (format[j])
 		{
-			arg = va_arg(ap, int);
-			printf("%c", arg);
+			case 'c':
+				arg = va_arg(ap, int);
+				printf("%c", arg);
+				break;
+			case 'i':
+				arg = va_arg(ap, int);
+				printf("%d", arg);
+				break;
+			case 'f':
+				arg = va_arg(ap, double);
+				printf("%c", arg);
+				break;
+			case 's':
+				iarg = va_arg(ap, char *);
+				j = 0;
+				while (iarg[j] != '\0')
+				{
+					printf("%c", iarg[j]);
+					j++;
+				}
+				break;
 		}
-		if (format[j] == 'i')
-		{
-			arg = va_arg(ap, int);
-			printf("%i", arg);
-		}
-		if (format[j] == 'f')
-		{
-			arg = va_arg(ap, double);
-			printf("%d", arg);
-		}
-		if (format[j] == 's')
-		{
-			iarg = va_arg(ap, char *);
-			j = 0;
-			while (iarg[j] != '\0')
-			{
-				printf("%c", iarg[j]);
-				j++;
-			}
-		}
+		if (k < (l - 1))
+		       printf(", ");	
 		j++;
 	}
 	printf("\n");

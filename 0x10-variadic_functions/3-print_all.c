@@ -8,22 +8,43 @@
  */
 void print_all(const char * const format, ...)
 {
-	char c;
-	int i, j;
-	float f;
-	char *s;
-	char array[] = {c, i, f, s};
-	va_list args;
+	int j;
+	char arg;
+	char *iarg;
+	/* char array[] = {c, i, f, s}; */
+	va_list ap;
 
-	va_start(args, format);
+	va_start(ap, format);
 	j = 0;
-	k = 0;
 	while (format[j] != '\0')
 	{
-		if (format[j] == arr[k])
+		if (format[j] == 'c')
 		{
-			va_arg(arg
+			arg = va_arg(ap, int);
+			printf("%c", arg);
 		}
+		if (format[j] == 'i')
+		{
+			arg = va_arg(ap, int);
+			printf("%i", arg);
+		}
+		if (format[j] == 'f')
+		{
+			arg = va_arg(ap, double);
+			printf("%d", arg);
+		}
+		if (format[j] == 's')
+		{
+			iarg = va_arg(ap, char *);
+			j = 0;
+			while (iarg[j] != '\0')
+			{
+				printf("%c", iarg[j]);
+				j++;
+			}
+		}
+		j++;
 	}
+	printf("\n");
 
 }

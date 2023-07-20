@@ -14,8 +14,7 @@ void print_all(const char * const format, ...)
 	va_list ap;
 
 	va_start(ap, format);
-	j = l = 0;
-	k = 0;
+	j = k = l = 0;
 	while (format[j] != '\0')
 	{
 		l++;
@@ -31,21 +30,22 @@ void print_all(const char * const format, ...)
 				break;
 			case 'f':
 				arg = va_arg(ap, double);
-				printf("%c", arg);
+				printf("%d", arg);
 				break;
 			case 's':
 				iarg = va_arg(ap, char *);
-				j = 0;
-				while (iarg[j] != '\0')
+				k = 0;
+				while (iarg[k] != '\0')
 				{
-					printf("%c", iarg[j]);
-					j++;
+					printf("%c", iarg[k]);
+					k++;
 				}
 				break;
 		}
+		j++;
 		if (k < (l - 1))
 			printf(", ");
-		j++;
 	}
+	va_end(ap);
 	printf("\n");
 }

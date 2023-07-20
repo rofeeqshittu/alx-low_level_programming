@@ -21,8 +21,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		if (str == NULL)
 			printf("(nil)");
-		for (k = 0; str[k] != '\0'; k++)
-			printf("%c", str[k]);
+		else
+			for (k = 0; str[k] != '\0'; k++)
+				printf("%c", str[k]);
 
 		if (separator != NULL)
 			if (i < (n - 1))

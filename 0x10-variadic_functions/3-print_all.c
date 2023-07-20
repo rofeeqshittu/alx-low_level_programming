@@ -30,7 +30,7 @@ void print_all(const char * const format, ...)
 				break;
 			case 'f':
 				arg = va_arg(ap, double);
-				printf("%d", arg);
+				printf("%f",(float)arg);
 				break;
 			case 's':
 				iarg = va_arg(ap, char *);

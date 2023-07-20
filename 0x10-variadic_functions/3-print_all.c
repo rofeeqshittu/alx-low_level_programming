@@ -46,7 +46,7 @@ void print_all(const char * const format, ...)
 				break;
 		}
 		if (k < (l - 1))
-		       printf(", ");	
+			printf(", ");
 		j++;
 	}
 	printf("\n");

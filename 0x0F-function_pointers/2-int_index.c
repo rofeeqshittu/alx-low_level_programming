@@ -5,7 +5,6 @@
  * @array: array given.
  * @size: number of element in the array.
  * @cmp: pointer to the function to be used to compare values.
- * @num: number to check
  *
  * Return: Nothing.
  */

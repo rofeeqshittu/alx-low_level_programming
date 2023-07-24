@@ -8,7 +8,7 @@
  * Return: Pointer to the function that correspond to the operator
  * given as parameter.
  */
-int (*get_op_func(char *s))(int, int)
+int (*get_op_func(char *s))(int a, int b)
 {
 	int i;
 	op_t ops[] = {
@@ -18,14 +18,15 @@ int (*get_op_func(char *s))(int, int)
 		{"/", op_div},
 		{"%", op_mod},
 		{NULL, NULL},
-	}
-
+	};
 	i = 0;
-	while (ops[i] != NULL)
+	while (ops[i].op)
 	{
-		if (ops[i][0] == s)
-			ops[i][1](int, int);
-		else
-			return (NULL);
+		if (strcmp(s, ops[i].op) == 0)
+		{
+			return (ops[i].f);
+		}
+		i++;
 	}
+	return (0);
 }

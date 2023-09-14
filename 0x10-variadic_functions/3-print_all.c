@@ -47,7 +47,8 @@ void print_all(const char * const format, ...)
 				 format[j] == 'f' || format[j] == 's'))
 			printf(", ");
 		j++;
+	}
 
 	va_end(ap);
 	printf("\n");
-}}
+}

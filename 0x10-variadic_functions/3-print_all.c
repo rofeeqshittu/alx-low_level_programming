@@ -35,12 +35,11 @@ void print_all(const char * const format, ...)
 				iarg = va_arg(ap, char *);
 				if (iarg == NULL)
 					printf("(nil)");
-				else
-					while (iarg[k] != '\0')
-					{
-						printf("%c", iarg[k]);
-						k++;
-					}
+				while (iarg[k] != '\0')
+				{
+					printf("%c", iarg[k]);
+					k++;
+				}
 				break;
 		}
 		j++;

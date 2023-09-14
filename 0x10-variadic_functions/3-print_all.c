@@ -36,7 +36,11 @@ void print_all(const char * const format, ...)
 				if (iarg == NULL)
 					printf("(nil)");
 				else
-					printf("%s", iarg);
+					while (iarg[k] != '\0')
+					{
+						printf("%c", iarg[k]);
+						k++;
+					}
 				break;
 		}
 		j++;

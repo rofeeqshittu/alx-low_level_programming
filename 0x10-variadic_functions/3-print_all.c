@@ -8,14 +8,15 @@
  */
 void print_all(const char * const format, ...)
 {
-	int j;
+	int j, k, l;
 	char arg, *iarg;
 	va_list ap;
 
 	va_start(ap, format);
-	j = 0;
+	j = k = l = 0;
 	while (format[j] != '\0')
 	{
+		l++;
 		switch (format[j])
 		{
 			case 'c':
@@ -34,17 +35,16 @@ void print_all(const char * const format, ...)
 				iarg = va_arg(ap, char *);
 				if (iarg == NULL)
 					printf("(nil)");
-				else
-					printf("%s", iarg);
+				while (iarg[k] != '\0')
+				{
+					printf("%c", iarg[k]);
+					k++;
+				}
 				break;
-			default:
-				j++;
-				continue;
 		}
-		if (format[j + 1] != '\0' && (format[j] == 'c' || format[j] == 'i' ||
-				 format[j] == 'f' || format[j] == 's'))
-			printf(", ");
 		j++;
+		if (k < (l - 1))
+			printf(", ");
 	}
 	va_end(ap);
 	printf("\n");

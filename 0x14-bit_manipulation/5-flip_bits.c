@@ -6,7 +6,7 @@
  * @n: N
  * @m: M
  *
- * Return; check description
+ * Return: check description
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {

@@ -11,9 +11,11 @@
  * @header: Pointer to the ELF header structure.
  */
 void display_elf_header_info(Elf64_Ehdr *header) {
-    // Print the ELF magic number
+    int i;  // Declare 'i' before the loop (C90 style)
+    
+    /* Print the ELF magic number */
     printf("Magic:   ");
-    for (int i = 0; i < EI_NIDENT; i++) {
+    for (i = 0; i < EI_NIDENT; i++) {
         printf("%02x ", header->e_ident[i]);
     }
     printf("\nClass:   %s\n", (header->e_ident[EI_CLASS] == ELFCLASS32) ? "ELF32" : "ELF64");
@@ -22,7 +24,7 @@ void display_elf_header_info(Elf64_Ehdr *header) {
     printf("OS/ABI:  %s\n", (header->e_ident[EI_OSABI] == ELFOSABI_SYSV) ? "UNIX - System V" : "Unknown");
     printf("ABI Version: %d\n", header->e_ident[EI_ABIVERSION]);
 
-    // Print the ELF type
+    /* Print the ELF type */
     printf("Type:    ");
     switch (header->e_type) {
         case ET_NONE:
@@ -44,7 +46,7 @@ void display_elf_header_info(Elf64_Ehdr *header) {
             printf("Unknown\n");
     }
 
-    // Print the entry point address
+    /* Print the entry point address */
     printf("Entry point address: 0x%lx\n", (unsigned long)header->e_entry);
 }
 
@@ -60,28 +62,30 @@ int main(int argc, char *argv[]) {
         exit(98);
     }
 
-    int fd = open(argv[1], O_RDONLY);
+    int fd;
+    Elf64_Ehdr header;  // Declare 'fd' and 'header' before any code (C90 style)
+
+    fd = open(argv[1], O_RDONLY);
     if (fd == -1) {
         perror("Error opening file");
         exit(98);
     }
 
-    // Read ELF header
-    Elf64_Ehdr header;
+    /* Read ELF header */
     if (read(fd, &header, sizeof(header)) != sizeof(header)) {
         perror("Error reading ELF header");
         close(fd);
         exit(98);
     }
 
-    // Check ELF magic number
+    /* Check ELF magic number */
     if (memcmp(header.e_ident, ELFMAG, SELFMAG) != 0) {
         fprintf(stderr, "Error: Not an ELF file\n");
         close(fd);
         exit(98);
     }
 
-    // Display ELF header information
+    /* Display ELF header information */
     display_elf_header_info(&header);
 
     close(fd);

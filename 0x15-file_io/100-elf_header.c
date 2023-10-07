@@ -11,7 +11,7 @@
  * @header: Pointer to the ELF header structure.
  */
 void display_elf_header_info(Elf64_Ehdr *header) {
-    int i;  // Declare 'i' before the loop (C90 style)
+    int i;  /* Declare 'i' before the loop (C90 style) */
     
     /* Print the ELF magic number */
     printf("Magic:   ");
@@ -57,13 +57,14 @@ void display_elf_header_info(Elf64_Ehdr *header) {
  * Return: 0 on success, 98 on error.
  */
 int main(int argc, char *argv[]) {
+    int fd; /* Declare 'fd' before any code (C90 style) */
+    Elf64_Ehdr header;
+    int i; /* Declare 'i' before any code (C90 style) */
+    
     if (argc != 2) {
         fprintf(stderr, "Usage: %s elf_filename\n", argv[0]);
         exit(98);
     }
-
-    int fd;
-    Elf64_Ehdr header;  // Declare 'fd' and 'header' before any code (C90 style)
 
     fd = open(argv[1], O_RDONLY);
     if (fd == -1) {

@@ -59,7 +59,6 @@ void display_elf_header_info(Elf64_Ehdr *header) {
 int main(int argc, char *argv[]) {
     int fd; /* Declare 'fd' before any code (C90 style) */
     Elf64_Ehdr header;
-    int i; /* Declare 'i' before any code (C90 style) */
     
     if (argc != 2) {
         fprintf(stderr, "Usage: %s elf_filename\n", argv[0]);

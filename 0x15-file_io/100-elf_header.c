@@ -11,7 +11,7 @@
  * @header: Pointer to the ELF header structure.
  */
 void display_elf_header_info(Elf64_Ehdr *header) {
-    int i;  /* Declare 'i' before the loop (C90 style) */
+    int i;
 
     printf("ELF Header:\n");
     printf("  Magic:   ");
@@ -20,11 +20,23 @@ void display_elf_header_info(Elf64_Ehdr *header) {
     }
     printf("\n");
 
-    printf("  Class:                             %s\n",
-           (header->e_ident[EI_CLASS] == ELFCLASS32) ? "ELF32" : "ELF64");
-    printf("  Data:                              %s\n",
-           (header->e_ident[EI_DATA] == ELFDATA2LSB) ? "2's complement, little endian" : "Unknown");
-    printf("  Version:                           %d (current)\n", header->e_ident[EI_VERSION]);
+    printf("  Class:                             ");
+    if (header->e_ident[EI_CLASS] == ELFCLASS32) {
+        printf("ELF32\n");
+    } else {
+        printf("ELF64\n");
+    }
+
+    printf("  Data:                              ");
+    if (header->e_ident[EI_DATA] == ELFDATA2LSB) {
+        printf("2's complement, little endian\n");
+    } else if (header->e_ident[EI_DATA] == ELFDATA2MSB) {
+        printf("2's complement, big endian\n");
+    } else {
+        printf("Unknown\n");
+    }
+
+    printf("  Version:                           %d\n", header->e_ident[EI_VERSION]);
 
     printf("  OS/ABI:                            ");
     switch (header->e_ident[EI_OSABI]) {
@@ -64,7 +76,7 @@ void display_elf_header_info(Elf64_Ehdr *header) {
             printf("Unknown\n");
     }
 
-    printf("  Entry point address:               0x%lx\n", (unsigned long)header->e_entry);
+    printf("  Entry point address:               0x%08lx\n", (unsigned long)header->e_entry);
 }
 
 /**

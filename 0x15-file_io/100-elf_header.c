@@ -36,7 +36,7 @@ void display_elf_header_info(Elf64_Ehdr *header) {
         printf("Unknown\n");
     }
 
-    printf("  Version:                           %d\n", header->e_ident[EI_VERSION]);
+printf("  Version:                           %d (current)\n", header->e_ident[EI_VERSION]);
 
     printf("  OS/ABI:                            ");
     switch (header->e_ident[EI_OSABI]) {

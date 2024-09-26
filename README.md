@@ -1,6 +1,6 @@
 # ALX Low Level Programming
 
-This repository contains various tasks and projects that form my learning phase of the C programming language. Each directory corresponds to different exercises, practices, and projects designed to enhance understanding of low-level programming concepts.
+This repository contains various tasks and projects that form my learning phase of the C programming language. Each directory corresponds to different exercises, practices, and projects designed to enhance my understanding of low-level programming concepts.
 
 ## Directory Structure
 
